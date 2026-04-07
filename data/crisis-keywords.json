@@ -1,0 +1,52 @@
+{
+  "keywords": [
+    "kill myself",
+    "want to die",
+    "end my life",
+    "end it all",
+    "suicide",
+    "suicidal",
+    "self-harm",
+    "self harm",
+    "hurt myself",
+    "cutting myself",
+    "don't want to live",
+    "dont want to live",
+    "no reason to live",
+    "better off dead",
+    "wish i was dead",
+    "wish i were dead",
+    "can't go on",
+    "cant go on",
+    "want to disappear",
+    "overdose",
+    "jump off",
+    "hang myself"
+  ],
+  "resources": [
+    {
+      "name": "988 Suicide & Crisis Lifeline",
+      "contact": "Call or text 988",
+      "description": "24/7 free and confidential support",
+      "url": "https://988lifeline.org"
+    },
+    {
+      "name": "Crisis Text Line",
+      "contact": "Text HOME to 741741",
+      "description": "Free 24/7 crisis counseling via text",
+      "url": "https://www.crisistextline.org"
+    },
+    {
+      "name": "Kids Help Phone (Canada)",
+      "contact": "Call 1-800-668-6868 or text CONNECT to 686868",
+      "description": "24/7 support for young people in Canada",
+      "url": "https://kidshelpphone.ca"
+    },
+    {
+      "name": "Good2Talk (Ontario)",
+      "contact": "Call 1-866-925-5454 or text GOOD2TALKON to 686868",
+      "description": "Post-secondary student helpline",
+      "url": "https://good2talk.ca"
+    }
+  ]
+}

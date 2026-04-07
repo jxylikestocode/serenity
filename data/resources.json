@@ -1,0 +1,62 @@
+{
+  "crisisLines": [
+    {
+      "name": "988 Suicide & Crisis Lifeline",
+      "contact": "Call or text 988",
+      "description": "24/7 free and confidential support for people in distress.",
+      "url": "https://988lifeline.org"
+    },
+    {
+      "name": "Crisis Text Line",
+      "contact": "Text HOME to 741741",
+      "description": "Free 24/7 crisis counseling via text message.",
+      "url": "https://www.crisistextline.org"
+    },
+    {
+      "name": "Kids Help Phone (Canada)",
+      "contact": "Call 1-800-668-6868 or text CONNECT to 686868",
+      "description": "Canada's 24/7 counselling and support for young people.",
+      "url": "https://kidshelpphone.ca"
+    },
+    {
+      "name": "Good2Talk (Ontario)",
+      "contact": "Call 1-866-925-5454 or text GOOD2TALKON to 686868",
+      "description": "Post-secondary student helpline in Ontario.",
+      "url": "https://good2talk.ca"
+    }
+  ],
+  "selfHelp": [
+    {
+      "name": "MindShift CBT",
+      "description": "Free app using CBT strategies to help manage anxiety.",
+      "url": "https://www.anxietycanada.com/resources/mindshift-cbt/"
+    },
+    {
+      "name": "Wellness Together Canada",
+      "description": "Free mental health and substance use support for Canadians.",
+      "url": "https://www.wellnesstogether.ca"
+    },
+    {
+      "name": "BounceBack Ontario",
+      "description": "Free guided self-help program for managing low mood and anxiety.",
+      "url": "https://bouncebackontario.ca"
+    }
+  ],
+  "campus": [
+    {
+      "name": "Sheridan Counselling Services",
+      "description": "Free and confidential counselling for all Sheridan students.",
+      "url": "https://www.sheridancollege.ca/student-life/student-services/counselling"
+    },
+    {
+      "name": "Sheridan Student Union",
+      "description": "Student advocacy and wellness resources.",
+      "url": "https://www.sheridanstudentunion.ca"
+    },
+    {
+      "name": "Campus Security (24/7)",
+      "description": "For emergencies on campus. Available 24/7.",
+      "url": ""
+    }
+  ]
+}

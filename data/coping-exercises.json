@@ -1,0 +1,100 @@
+{
+  "exercises": [
+    {
+      "slug": "breathing",
+      "name": "Box Breathing",
+      "type": "breathing",
+      "description": "A calming technique used by Navy SEALs. Breathe in a box pattern to reduce stress and anxiety.",
+      "icon": "lungs",
+      "color": "#dbeafe",
+      "duration": "4 minutes"
+    },
+    {
+      "slug": "grounding",
+      "name": "5-4-3-2-1 Grounding",
+      "type": "grounding",
+      "description": "Use your five senses to ground yourself in the present moment and reduce anxiety.",
+      "icon": "hand-index-thumb",
+      "color": "#d1fae5",
+      "duration": "5 minutes",
+      "steps": [
+        {
+          "count": 5,
+          "prompt": "Name 5 things you can SEE",
+          "detail": "Look around you and notice five things you can see right now.",
+          "placeholder": "Something I see"
+        },
+        {
+          "count": 4,
+          "prompt": "Name 4 things you can TOUCH",
+          "detail": "Reach out and notice four things you can physically feel.",
+          "placeholder": "Something I can touch"
+        },
+        {
+          "count": 3,
+          "prompt": "Name 3 things you can HEAR",
+          "detail": "Listen carefully and identify three sounds around you.",
+          "placeholder": "Something I hear"
+        },
+        {
+          "count": 2,
+          "prompt": "Name 2 things you can SMELL",
+          "detail": "Notice two scents in your environment.",
+          "placeholder": "Something I smell"
+        },
+        {
+          "count": 1,
+          "prompt": "Name 1 thing you can TASTE",
+          "detail": "Focus on one taste — even if it's just the inside of your mouth.",
+          "placeholder": "Something I taste"
+        }
+      ]
+    },
+    {
+      "slug": "prompts",
+      "name": "Journaling Prompts",
+      "type": "prompts",
+      "description": "Thoughtful prompts inspired by CBT to help you process emotions through writing.",
+      "icon": "pencil-square",
+      "color": "#ede9fe",
+      "duration": "10+ minutes",
+      "prompts": [
+        "What would you tell a close friend going through the same thing?",
+        "What is one small thing that brought you comfort recently?",
+        "Describe a time you overcame something you thought you couldn't handle.",
+        "What emotions are you feeling right now? Can you name at least three?",
+        "What is something you're grateful for today, no matter how small?",
+        "If your anxiety could talk, what would it say? How would you respond?",
+        "Write about a place where you feel completely safe and at peace.",
+        "What is one thing you can do today to take care of yourself?",
+        "Describe your perfect day. What does it look like?",
+        "What boundaries do you need to set to protect your well-being?",
+        "Write a letter to your future self. What do you want them to know?",
+        "What are three strengths you have that help you through tough times?"
+      ]
+    },
+    {
+      "slug": "affirmations",
+      "name": "Positive Affirmations",
+      "type": "affirmations",
+      "description": "Gentle reminders of your worth and strength. Read them slowly and let them sink in.",
+      "icon": "stars",
+      "color": "#fce7f3",
+      "duration": "2 minutes",
+      "affirmations": [
+        "I am worthy of love and kindness, especially from myself.",
+        "It's okay to take things one moment at a time.",
+        "My feelings are valid, even when they're hard.",
+        "I have overcome difficult things before, and I can do it again.",
+        "I don't have to be perfect to be enough.",
+        "It's okay to ask for help. That takes courage.",
+        "I am more resilient than I give myself credit for.",
+        "This feeling is temporary. It will pass.",
+        "I deserve rest and recovery.",
+        "I am doing the best I can, and that is enough.",
+        "My struggles do not define me.",
+        "Every small step forward counts."
+      ]
+    }
+  ]
+}
