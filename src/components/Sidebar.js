@@ -1,9 +1,19 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
-export default function Sidebar({ moodCount = 0, journalCount = 0 }) {
+export default function Sidebar() {
   const pathname = usePathname();
+  const [moodCount, setMoodCount] = useState(0);
+  const [journalCount, setJournalCount] = useState(0);
+
+  useEffect(() => {
+    fetch('/api/stats').then(r => r.json()).then(d => {
+      setMoodCount(d.moodCount);
+      setJournalCount(d.journalCount);
+    }).catch(() => {});
+  }, [pathname]);
   const links = [
     { href: '/', label: 'Home', icon: 'bi-house-heart' },
     { href: '/mood', label: 'Mood', icon: 'bi-emoji-smile' },

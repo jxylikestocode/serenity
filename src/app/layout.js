@@ -1,9 +1,5 @@
 import './globals.css';
 import './style.css';
-import { cookies } from 'next/headers';
-import connectDB from '@/lib/mongodb';
-import Mood from '@/models/Mood';
-import Journal from '@/models/Journal';
 import Sidebar from '@/components/Sidebar';
 import CrisisModal from '@/components/CrisisModal';
 
@@ -12,21 +8,7 @@ export const metadata = {
   description: 'Anonymous mental health support with mood tracking, journaling, coping tools, and peer support.',
 };
 
-export default async function RootLayout({ children }) {
-  let moodCount = 0, journalCount = 0;
-
-  try {
-    await connectDB();
-    const cookieStore = await cookies();
-    const sessionId = cookieStore.get('serenity_session')?.value;
-    if (sessionId) {
-      [moodCount, journalCount] = await Promise.all([
-        Mood.countDocuments({ sessionId }),
-        Journal.countDocuments({ sessionId }),
-      ]);
-    }
-  } catch (e) { /* continue with defaults */ }
-
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
@@ -35,11 +17,10 @@ export default async function RootLayout({ children }) {
       <body>
         <a href="#main-content" className="skip-nav">Skip to main content</a>
         <div className="app-wrapper">
-          <Sidebar moodCount={moodCount} journalCount={journalCount} />
+          <Sidebar />
           <main id="main-content" className="main-content">
             <div className="top-bar">
-              <button className="btn btn-link d-lg-none sidebar-toggle" aria-label="Toggle navigation"
-                onClick={null}>
+              <button className="btn btn-link d-lg-none sidebar-toggle" aria-label="Toggle navigation">
                 <i className="bi bi-list fs-4" />
               </button>
               <div className="ms-auto">
