@@ -12,11 +12,8 @@ async function createVent(formData) {
   'use server';
   await connectDB();
   const cookieStore = await cookies();
-  let sessionId = cookieStore.get('serenity_session')?.value;
-  if (!sessionId) {
-    sessionId = crypto.randomUUID();
-    cookieStore.set('serenity_session', sessionId, { httpOnly: true, maxAge: 30 * 24 * 60 * 60, sameSite: 'lax' });
-  }
+  const sessionId = cookieStore.get('serenity_session')?.value;
+  if (!sessionId) redirect('/community?error=No+session');
   const content = formData.get('content')?.slice(0, 2000);
   const category = formData.get('category') || 'general';
   if (!content) redirect('/community?error=Please+write+something');

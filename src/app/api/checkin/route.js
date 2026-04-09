@@ -13,10 +13,9 @@ export async function POST(request) {
     }
 
     const cookieStore = await cookies();
-    let sessionId = cookieStore.get('serenity_session')?.value;
+    const sessionId = cookieStore.get('serenity_session')?.value;
     if (!sessionId) {
-      sessionId = crypto.randomUUID();
-      cookieStore.set('serenity_session', sessionId, { httpOnly: true, maxAge: 30 * 24 * 60 * 60, sameSite: 'lax' });
+      return Response.json({ error: 'No session' }, { status: 400 });
     }
 
     const crisisDetected = detectCrisis(note);

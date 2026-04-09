@@ -12,11 +12,8 @@ async function addReply(formData) {
 
   await connectDB();
   const cookieStore = await cookies();
-  let sessionId = cookieStore.get('serenity_session')?.value;
-  if (!sessionId) {
-    sessionId = crypto.randomUUID();
-    cookieStore.set('serenity_session', sessionId, { httpOnly: true, maxAge: 30 * 24 * 60 * 60, sameSite: 'lax' });
-  }
+  const sessionId = cookieStore.get('serenity_session')?.value;
+  if (!sessionId) redirect(`/community/${id}?error=No+session`);
 
   await Vent.findByIdAndUpdate(id, { $push: { replies: { sessionId, displayName: 'Anonymous', content } } });
   redirect(`/community/${id}?replied=true`);
