@@ -20,9 +20,6 @@ export default function RootLayout({ children }) {
           <Sidebar />
           <main id="main-content" className="main-content">
             <div className="top-bar">
-              <button className="btn btn-link d-lg-none sidebar-toggle" aria-label="Toggle navigation">
-                <i className="bi bi-list fs-4" />
-              </button>
               <div className="ms-auto">
                 <button className="btn btn-crisis" data-bs-toggle="modal" data-bs-target="#crisisModal">
                   <i className="bi bi-heart-pulse" /> Crisis Help

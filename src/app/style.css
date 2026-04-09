@@ -822,6 +822,11 @@ textarea.form-control-serenity {
   color: #374151;
 }
 
+/* ---- Mobile Toggle Button ---- */
+.sidebar-toggle-btn {
+  display: none;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 991.98px) {
   .sidebar {
@@ -851,6 +856,28 @@ textarea.form-control-serenity {
   }
   .top-bar {
     padding: 12px 16px;
+  }
+  .sidebar-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1001;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--sidebar-gradient);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+    text-decoration: none;
+    padding: 0;
+  }
+  .sidebar-toggle-btn:hover {
+    transform: scale(1.05);
+    color: #fff;
   }
 }
 

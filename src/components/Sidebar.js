@@ -1,12 +1,13 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function Sidebar() {
   const pathname = usePathname();
   const [moodCount, setMoodCount] = useState(0);
   const [journalCount, setJournalCount] = useState(0);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     fetch('/api/stats').then(r => r.json()).then(d => {
@@ -14,6 +15,15 @@ export default function Sidebar() {
       setJournalCount(d.journalCount);
     }).catch(() => {});
   }, [pathname]);
+
+  // Close sidebar on navigation
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  const toggle = useCallback(() => setOpen(o => !o), []);
+  const close = useCallback(() => setOpen(false), []);
+
   const links = [
     { href: '/', label: 'Home', icon: 'bi-house-heart' },
     { href: '/mood', label: 'Mood', icon: 'bi-emoji-smile' },
@@ -29,8 +39,8 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="sidebar-overlay" onClick={() => document.querySelector('.sidebar')?.classList.remove('show')} />
-      <aside className="sidebar" role="navigation" aria-label="Main navigation">
+      <div className={`sidebar-overlay ${open ? 'show' : ''}`} onClick={close} />
+      <aside className={`sidebar ${open ? 'show' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="sidebar-inner">
           <div className="sidebar-logo">
             <div className="logo-icon"><i className="bi bi-heart-pulse-fill" /></div>
@@ -43,7 +53,7 @@ export default function Sidebar() {
             <ul>
               {links.map(l => (
                 <li key={l.href}>
-                  <Link href={l.href} className={isActive(l.href) ? 'active' : ''}>
+                  <Link href={l.href} className={isActive(l.href) ? 'active' : ''} onClick={close}>
                     <i className={`bi ${l.icon}`} /><span>{l.label}</span>
                   </Link>
                 </li>
@@ -61,6 +71,10 @@ export default function Sidebar() {
           </div>
         </div>
       </aside>
+      {/* Floating toggle button for mobile */}
+      <button className="btn btn-link d-lg-none sidebar-toggle-btn" aria-label="Toggle navigation" onClick={toggle}>
+        <i className={`bi ${open ? 'bi-x-lg' : 'bi-list'} fs-4`} />
+      </button>
     </>
   );
 }
